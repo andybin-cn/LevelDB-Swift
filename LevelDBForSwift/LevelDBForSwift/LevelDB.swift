@@ -16,13 +16,42 @@ open class LevelDB {
         let filePath = NSHomeDirectory() + "/Documents/" + name
         var cChar: [CChar] = [CChar].init(repeating: 0, count: 1024)
         _ = filePath.getCString(&cChar, maxLength: 1024, encoding: .utf8)
-        self.db = c_creatLevelDB(&cChar)
+        self.db = c_creatLeveldb(&cChar)
     }
     
+    subscript(key: String) -> String? {
+        get {
+            guard let db = self.db else {
+                return nil
+            }
+//            guard var keyChar: [CChar] = key.cString(using: .utf8) else {
+//                return nil
+//            }
+//            let keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
+            return c_leveldbGetValue(db, key)
+//            let string = String.init(cString: valueString.basePtr)
+//            valueString.basePtr.deallocate(capacity: valueString.lenght)
+//            return string
+        }
+        set {
+            guard let db = self.db else {
+                return
+            }
+            guard var keyChar: [CChar] = key.cString(using: .utf8) else {
+                return
+            }
+            guard var valueChar: [CChar] = newValue?.cString(using: .utf8) else {
+                return
+            }
+            let keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
+            let valueCstring = _CString_(basePtr: &valueChar, lenght: valueChar.count)
+            c_leveldbSetValue(db, keyCstring, valueCstring)
+        }
+    }
     
     public func close() {
         if let db = self.db {
-            c_closeLevelDB(db)
+            c_closeLeveldb(db)
         }
     }
 }
