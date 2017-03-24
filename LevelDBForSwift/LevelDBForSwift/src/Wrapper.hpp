@@ -12,11 +12,10 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-    void* c_creatlevelDB(char* path);
+    void* c_creatLevelDB(char* path);
+    void c_closeLevelDB(void* leveldb);
 #ifdef __cplusplus
 }
 #endif
-
-//struct DB* call_C_creatDB(char* path);
 
 #endif /* Wrapper_hpp */

@@ -9,7 +9,7 @@
 #include "Wrapper.hpp"
 #include "db.h"
 
-void* c_creatlevelDB(char* path) // wrapper function
+void* c_creatLevelDB(char* path) // wrapper function
 {
     leveldb::DB *_db;
     leveldb::Options options;
@@ -18,4 +18,13 @@ void* c_creatlevelDB(char* path) // wrapper function
     leveldb::DB::Open(options, string, &_db);
     
     return _db;
+}
+
+void c_closeLevelDB(void* leveldb)
+{
+    leveldb::DB *_db = (leveldb::DB *)leveldb;
+    if (_db) {
+        delete _db;
+        leveldb = NULL;
+    }
 }

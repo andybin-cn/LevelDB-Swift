@@ -11,7 +11,7 @@
 		B3C60DCA1E84FDC10029D8B3 /* LevelDBForSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C60DC91E84FDC10029D8B3 /* LevelDBForSwiftTests.swift */; };
 		B3C60DCC1E84FDC10029D8B3 /* LevelDBForSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DBE1E84FDC10029D8B3 /* LevelDBForSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3C60DD81E84FE400029D8B3 /* Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3C60DD61E84FE400029D8B3 /* Wrapper.cpp */; };
-		B3C60DD91E84FE400029D8B3 /* Wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DD71E84FE400029D8B3 /* Wrapper.hpp */; };
+		B3C60DD91E84FE400029D8B3 /* Wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DD71E84FE400029D8B3 /* Wrapper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3C60DEC1E84FE460029D8B3 /* c.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DDC1E84FE460029D8B3 /* c.h */; };
 		B3C60DED1E84FE460029D8B3 /* cache.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DDD1E84FE460029D8B3 /* cache.h */; };
 		B3C60DEE1E84FE460029D8B3 /* comparator.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DDE1E84FE460029D8B3 /* comparator.h */; };
@@ -20,7 +20,7 @@
 		B3C60DF11E84FE460029D8B3 /* env.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE11E84FE460029D8B3 /* env.h */; };
 		B3C60DF21E84FE460029D8B3 /* filter_policy.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE21E84FE460029D8B3 /* filter_policy.h */; };
 		B3C60DF31E84FE460029D8B3 /* iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE31E84FE460029D8B3 /* iterator.h */; };
-		B3C60DF41E84FE460029D8B3 /* options.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE41E84FE460029D8B3 /* options.h */; };
+		B3C60DF41E84FE460029D8B3 /* options.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE41E84FE460029D8B3 /* options.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3C60DF51E84FE460029D8B3 /* slice.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE51E84FE460029D8B3 /* slice.h */; };
 		B3C60DF61E84FE460029D8B3 /* status.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE61E84FE460029D8B3 /* status.h */; };
 		B3C60DF71E84FE460029D8B3 /* table.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE71E84FE460029D8B3 /* table.h */; };
@@ -28,6 +28,7 @@
 		B3C60DF91E84FE460029D8B3 /* write_batch.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE91E84FE460029D8B3 /* write_batch.h */; };
 		B3C60DFA1E84FE460029D8B3 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C60DEA1E84FE460029D8B3 /* libleveldb.a */; };
 		B3C60DFB1E84FE460029D8B3 /* libmemenv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C60DEB1E84FE460029D8B3 /* libmemenv.a */; };
+		B3C60DFD1E8501BB0029D8B3 /* LevelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C60DFC1E8501BB0029D8B3 /* LevelDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B3C60DE91E84FE460029D8B3 /* write_batch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = write_batch.h; sourceTree = "<group>"; };
 		B3C60DEA1E84FE460029D8B3 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleveldb.a; sourceTree = "<group>"; };
 		B3C60DEB1E84FE460029D8B3 /* libmemenv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmemenv.a; sourceTree = "<group>"; };
+		B3C60DFC1E8501BB0029D8B3 /* LevelDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				B3C60DD51E84FE400029D8B3 /* src */,
 				B3C60DBE1E84FDC10029D8B3 /* LevelDBForSwift.h */,
 				B3C60DBF1E84FDC10029D8B3 /* Info.plist */,
+				B3C60DFC1E8501BB0029D8B3 /* LevelDB.swift */,
 			);
 			path = LevelDBForSwift;
 			sourceTree = "<group>";
@@ -174,15 +177,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C60DEC1E84FE460029D8B3 /* c.h in Headers */,
+				B3C60DF41E84FE460029D8B3 /* options.h in Headers */,
+				B3C60DD91E84FE400029D8B3 /* Wrapper.hpp in Headers */,
 				B3C60DF61E84FE460029D8B3 /* status.h in Headers */,
 				B3C60DF21E84FE460029D8B3 /* filter_policy.h in Headers */,
 				B3C60DF71E84FE460029D8B3 /* table.h in Headers */,
 				B3C60DF31E84FE460029D8B3 /* iterator.h in Headers */,
 				B3C60DEE1E84FE460029D8B3 /* comparator.h in Headers */,
 				B3C60DED1E84FE460029D8B3 /* cache.h in Headers */,
-				B3C60DD91E84FE400029D8B3 /* Wrapper.hpp in Headers */,
 				B3C60DF81E84FE460029D8B3 /* table_builder.h in Headers */,
-				B3C60DF41E84FE460029D8B3 /* options.h in Headers */,
 				B3C60DF11E84FE460029D8B3 /* env.h in Headers */,
 				B3C60DEF1E84FE460029D8B3 /* db.h in Headers */,
 				B3C60DF51E84FE460029D8B3 /* slice.h in Headers */,
@@ -244,6 +247,7 @@
 					B3C60DBA1E84FDC10029D8B3 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EG49RAY3R6;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					B3C60DC31E84FDC10029D8B3 = {
@@ -293,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C60DFD1E8501BB0029D8B3 /* LevelDB.swift in Sources */,
 				B3C60DD81E84FE400029D8B3 /* Wrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +423,7 @@
 		B3C60DD01E84FDC10029D8B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = EG49RAY3R6;
@@ -434,6 +440,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Binea.LevelDBForSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -441,6 +448,7 @@
 		B3C60DD11E84FDC10029D8B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = EG49RAY3R6;
@@ -464,6 +472,7 @@
 		B3C60DD31E84FDC10029D8B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = EG49RAY3R6;
 				INFOPLIST_FILE = LevelDBForSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -476,6 +485,7 @@
 		B3C60DD41E84FDC10029D8B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = EG49RAY3R6;
 				INFOPLIST_FILE = LevelDBForSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

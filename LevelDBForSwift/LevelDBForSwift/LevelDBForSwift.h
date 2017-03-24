@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Wrapper.hpp"
 
 //! Project version number for LevelDBForSwift.
 FOUNDATION_EXPORT double LevelDBForSwiftVersionNumber;
