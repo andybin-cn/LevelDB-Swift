@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DBGetterWrapper.h"
 #import "Wrapper.hpp"
 
 

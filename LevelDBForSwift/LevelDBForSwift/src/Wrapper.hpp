@@ -11,7 +11,7 @@
 #define Wrapper_hpp
 
 struct _CString_ {
-    const char* basePtr;
+    char* basePtr;
     long lenght;
 };
 
@@ -21,7 +21,8 @@ extern "C" {
     void* c_creatLeveldb(char* path);
     void c_closeLeveldb(void* leveldb);
     void c_leveldbSetValue(void* leveldb, struct _CString_ key, struct _CString_ value);
-//    struct _CString_ c_leveldbGetValue(void* leveldb, struct _CString_ key);
+    struct _CString_ c_leveldbGetValue(void* leveldb, struct _CString_* key);
+    void c_leveldbDeleteValue(void* leveldb, struct _CString_ key);
 #ifdef __cplusplus
 }
 #endif

@@ -24,14 +24,15 @@ open class LevelDB {
             guard let db = self.db else {
                 return nil
             }
-//            guard var keyChar: [CChar] = key.cString(using: .utf8) else {
-//                return nil
-//            }
-//            let keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
-            return c_leveldbGetValue(db, key)
-//            let string = String.init(cString: valueString.basePtr)
-//            valueString.basePtr.deallocate(capacity: valueString.lenght)
-//            return string
+            guard var keyChar: [CChar] = key.cString(using: .utf8) else {
+                return nil
+            }
+            var keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
+            let valueString = c_leveldbGetValue(db, &keyCstring)
+            let string = String.init(cString: valueString.basePtr)
+            valueString.basePtr.deinitialize(count: valueString.lenght)
+            valueString.basePtr.deallocate(capacity: valueString.lenght)
+            return string
         }
         set {
             guard let db = self.db else {
@@ -40,10 +41,12 @@ open class LevelDB {
             guard var keyChar: [CChar] = key.cString(using: .utf8) else {
                 return
             }
+            let keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
+            
             guard var valueChar: [CChar] = newValue?.cString(using: .utf8) else {
+                c_leveldbDeleteValue(db, keyCstring);
                 return
             }
-            let keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
             let valueCstring = _CString_(basePtr: &valueChar, lenght: valueChar.count)
             c_leveldbSetValue(db, keyCstring, valueCstring)
         }
