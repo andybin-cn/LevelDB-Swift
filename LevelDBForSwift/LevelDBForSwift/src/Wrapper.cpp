@@ -75,4 +75,5 @@ void c_leveldbDeleteValue(void* leveldb, struct _CString_ key)
 void c_FreeCString(struct _CString_* string)
 {
     free(string->basePtr);
+    string->basePtr = NULL;
 }
