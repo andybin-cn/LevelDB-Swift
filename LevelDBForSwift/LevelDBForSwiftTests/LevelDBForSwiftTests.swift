@@ -35,21 +35,28 @@ class LevelDBForSwiftTests: XCTestCase {
         
 //        let dic: [String: String] = ["name": db["name"] ?? "name"]
         for _ in 0...10000 {
-            let string1 = db["name"]
-            let string2 = db["name"]
-            let string3 = db["name"]
+//            let _ = db["name"]
+//            let _ = db["name"]
+//            let _ = db["name"]
+            autoreleasepool(invoking: {
+                let _ = db["name"]
+                let _ = db["name"]
+                let _ = db["name"]
+            })
 //            Thread.sleep(forTimeInterval: 0.01)
         }
         print("sleep(forTimeInterval: 30)")
         db.close()
-        Thread.sleep(forTimeInterval: 30)
+        Thread.sleep(forTimeInterval: 3)
         db = LevelDB(name: "test")
-        for _ in 0...200000 {
+        for _ in 0...10000 {
             let string1 = db["name"]
             let string2 = db["name"]
             let string3 = db["name"]
             Thread.sleep(forTimeInterval: 0.01)
         }
+        print("sleep(forTimeInterval: 30)")
+        Thread.sleep(forTimeInterval: 30)
     }
     
     func testPerformanceExample() {
