@@ -23,6 +23,8 @@ extern "C" {
     void c_leveldbSetValue(void* leveldb, struct _CString_ key, struct _CString_ value);
     struct _CString_ c_leveldbGetValue(void* leveldb, struct _CString_* key);
     void c_leveldbDeleteValue(void* leveldb, struct _CString_ key);
+    
+    void c_FreeCString(struct _CString_* string);
 #ifdef __cplusplus
 }
 #endif

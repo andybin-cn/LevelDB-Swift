@@ -28,10 +28,9 @@ open class LevelDB {
                 return nil
             }
             var keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
-            let valueString = c_leveldbGetValue(db, &keyCstring)
+            var valueString = c_leveldbGetValue(db, &keyCstring)
             let string = String.init(cString: valueString.basePtr)
-            valueString.basePtr.deinitialize(count: valueString.lenght)
-            valueString.basePtr.deallocate(capacity: valueString.lenght)
+            c_FreeCString(&valueString)
             return string
         }
         set {

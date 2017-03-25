@@ -71,3 +71,8 @@ void c_leveldbDeleteValue(void* leveldb, struct _CString_ key)
         printf("%s:%d c_leveldbSetValue error", __FILE__, __LINE__);
     }
 }
+
+void c_FreeCString(struct _CString_* string)
+{
+    free(string->basePtr);
+}
