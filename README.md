@@ -5,13 +5,13 @@
 ```
 此项目没有使用OC桥接文件，直接使用C包装C++接口，swift与C语言交互更加安全，效率更高
 ```
-##安装方法
-####支持CocoaPods方式：
+## 安装方法
+#### 支持CocoaPods方式：
 ```
 pod 'LevelDBForSwift'
 ```
-##使用方法
-```
+## 使用方法
+```swift
 //打开数据库
 db = LevelDB(name: "test")
 
@@ -29,7 +29,7 @@ let chinese = db["中文"]
 db.close()
 ```
 
-###License
+### License
 The MIT License (MIT)
 
 Copyright (c) 2015 Hemanta Sapkota
