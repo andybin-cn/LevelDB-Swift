@@ -29,7 +29,7 @@ let chinese = db["中文"]
 db.close()
 ```
 
-### License
+## License
 The MIT License (MIT)
 
 Copyright (c) 2015 Hemanta Sapkota
