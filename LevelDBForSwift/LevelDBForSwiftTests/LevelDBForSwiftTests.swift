@@ -32,31 +32,18 @@ class LevelDBForSwiftTests: XCTestCase {
         print("\(db["表情"])")
         print("\(db["中文"])")
         print("\(db["😄🎁"])")
+    }
+    
+    func testData() {
+        var db = LevelDB(name: "test")
         
-//        let dic: [String: String] = ["name": db["name"] ?? "name"]
-        for _ in 0...10000 {
-//            let _ = db["name"]
-//            let _ = db["name"]
-//            let _ = db["name"]
-            autoreleasepool(invoking: {
-                let _ = db["name"]
-                let _ = db["name"]
-                let _ = db["name"]
-            })
-//            Thread.sleep(forTimeInterval: 0.01)
-        }
-        print("sleep(forTimeInterval: 30)")
-        db.close()
-        Thread.sleep(forTimeInterval: 3)
-        db = LevelDB(name: "test")
-        for _ in 0...10000 {
-            let string1 = db["name"]
-            let string2 = db["name"]
-            let string3 = db["name"]
-            Thread.sleep(forTimeInterval: 0.01)
-        }
-        print("sleep(forTimeInterval: 30)")
-        Thread.sleep(forTimeInterval: 30)
+        let string = "1234567890=🆚😂"
+        
+        db.set(string.data(using: .utf8)!, forKey: "dataTest")
+        
+        let data = db.getData(forKey: "dataTest")
+        let string2 = String.init(data: data!, encoding: .utf8)
+        print("string From Data: \(string2)")
     }
     
     func testPerformanceExample() {
