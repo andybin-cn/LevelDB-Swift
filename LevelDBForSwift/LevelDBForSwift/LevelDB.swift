@@ -62,7 +62,7 @@ open class LevelDB {
     }
 }
 
-extension LevelDB {
+public extension LevelDB {
     //MARK: - Data
     public func set(_ value: Data, forKey key: String) {
         let basePointer = UnsafeMutablePointer<Int8>.allocate(capacity: value.count)
@@ -105,7 +105,7 @@ extension LevelDB {
         }
     }
     
-    public func getData(forKey key: String) -> Int? {
+    public func getInt(forKey key: String) -> Int? {
         if let value = self[key] {
             return Int(value)
         }
@@ -121,7 +121,7 @@ extension LevelDB {
         }
     }
     
-    public func getData(forKey key: String) -> Float? {
+    public func getFloat(forKey key: String) -> Float? {
         if let value = self[key] {
             return Float(value)
         }
@@ -137,7 +137,7 @@ extension LevelDB {
         }
     }
     
-    public func getData(forKey key: String) -> Date? {
+    public func getDate(forKey key: String) -> Date? {
         if let value = self[key], let time = TimeInterval(value) {
             return Date.init(timeIntervalSince1970: time)
         }
