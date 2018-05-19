@@ -31,7 +31,7 @@ class LevelDBForSwiftTests: XCTestCase {
     }
     
     func testData() {
-        let db = LevelDB(name: "test")
+        let db = LevelDB(name: "test2")
         
         let stringData = "1234567890=🆚😂".data(using: .utf8)
         XCTAssertNotNil(stringData)
