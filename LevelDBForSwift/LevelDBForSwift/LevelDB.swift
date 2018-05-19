@@ -66,7 +66,7 @@ public extension LevelDB {
     //MARK: - Data
     public func set(_ value: Data, forKey key: String) {
         let basePointer = UnsafeMutablePointer<Int8>.allocate(capacity: value.count)
-        basePointer.initialize(to: 0, count: value.count)
+        basePointer.initialize(repeating: 0, count: value.count)
         let pointer = UnsafeMutableBufferPointer<Int8>.init(start: basePointer, count: value.count)
         //        value.copyBytes(to: basePointer, count: value.count)
         _ = value.copyBytes(to: pointer)
@@ -79,7 +79,7 @@ public extension LevelDB {
         let keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
         let valueCstring = _CString_(basePtr: pointer.baseAddress, lenght: pointer.count)
         c_leveldbSetValue(db, keyCstring, valueCstring)
-        basePointer.deallocate(capacity: pointer.count)
+        basePointer.deallocate()
     }
     
     public func getData(forKey key: String) -> Data? {
