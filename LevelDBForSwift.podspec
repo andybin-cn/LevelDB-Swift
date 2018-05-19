@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LevelDBForSwift"
-  s.version      = "1.0.1"
+  s.version      = "1.1.0"
   s.summary      = "A Swift Key/Value DataBase for Wrapper from google's LevelDB."
 
   # This description is used to generate tags and improve search results.
