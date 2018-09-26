@@ -20,6 +20,12 @@ open class LevelDB {
     
     public convenience init(name: String) {
         let filePath = NSHomeDirectory() + "/Documents/" + name
+        let fMgr: FileManager = FileManager()
+        let lockFilePath = filePath + "/LOCK"
+        if (!fMgr.fileExists(atPath: lockFilePath)) {
+            try? fMgr.createDirectory(atPath: filePath, withIntermediateDirectories: true, attributes: nil)
+        }
+
         self.init(filePath: filePath)
     }
     
